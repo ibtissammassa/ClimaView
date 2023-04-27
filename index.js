@@ -23,6 +23,7 @@ async function getWeather(city){
         }
             mainBox.innerHTML = `<div class="MainBoxLeft box">
             <iframe src="https://embed.lottiefiles.com/animation/4804"></iframe>
+            <h2 class="name">London</h2>
             <h2 class="degree">30°C </h2>
             <h3 class="date"><span class="day">Monday</span>, <span class="hour"><span class="h">12</span>:<span class="m">35</span></span></h3>
             <h2 class="status">Clear sky</h2>
@@ -62,6 +63,10 @@ async function getWeather(city){
             minutes.innerHTML = m;
             h= h<10 ? "0" + h : h;
             m= m<10 ? "0" + m : m;
+
+         /* CITY NAME */
+         const name= document.querySelector(".name");
+         name.innerHTML = data.name;
             
         /* DEGREE */
         const degree = document.querySelector(".degree");
