@@ -85,27 +85,40 @@ async function getWeather(city){
         /* Icons */
         const Icon = document.querySelector("iframe");
 
-        const Icons = {
-            "11d":"https://embed.lottiefiles.com/animation/4805",
-            "09d":"https://embed.lottiefiles.com/animation/4803",
-            "10d":"https://embed.lottiefiles.com/animation/4801",
-            "13d":"https://embed.lottiefiles.com/animation/4793",
-            "50d":"https://embed.lottiefiles.com/animation/4795",
+        const IconsUrl = {
             "01d":"https://embed.lottiefiles.com/animation/4804",
             "01n":"https://embed.lottiefiles.com/animation/4799",
             "02d":"https://embed.lottiefiles.com/animation/4800",
             "02n":"https://embed.lottiefiles.com/animation/4796",
-            "02n":"https://embed.lottiefiles.com/animation/4796",
-
+            "03d":"https://embed.lottiefiles.com/animation/4806",
+            "03n":"https://embed.lottiefiles.com/animation/4806",
+            "04d":"https://embed.lottiefiles.com/animation/4791",
+            "04n":"https://embed.lottiefiles.com/animation/4806",
+            "09d":"https://embed.lottiefiles.com/animation/4803",
+            "09n":"https://embed.lottiefiles.com/animation/4803",
+            "10d":"https://embed.lottiefiles.com/animation/4801",
+            "10n":"https://embed.lottiefiles.com/animation/4797",
+            "11d":"https://embed.lottiefiles.com/animation/4805",
+            "11n":"https://embed.lottiefiles.com/animation/4805",
+            "13d":"https://embed.lottiefiles.com/animation/4802",
+            "13n":"https://embed.lottiefiles.com/animation/4798",
+            "50d":"https://embed.lottiefiles.com/animation/4795",
+            "50n":"https://embed.lottiefiles.com/animation/4795",
         }
 
-        Icon.setAttribute("src",`${Icons[data.weather.icon]}`);
+        const iconUrl = IconsUrl[data.weather[0].icon];
+
+        if (iconUrl) {
+            Icon.setAttribute("src", iconUrl);
+        } else {
+            console.error(`Invalid weather icon value: ${data.weather[0].icon}`);
+        }
 
 
 
     } catch (error) {
         notFound();
-        console.log(error);
+        console.error(error);
     }
 }
 

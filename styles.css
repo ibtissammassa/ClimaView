@@ -11,7 +11,7 @@ body{
     display: flex;
     justify-content: center;
     font-family: 'Outfit', sans-serif;
-    background: #F7F6F9;
+    background: #d8e0f8;
 }
 
 .container{
@@ -90,10 +90,10 @@ input[type="submit"] {
 }
 
 .MainBoxLeft{
-    background: #E9EDFB;
-    width: 30%;
+    background: #ffffff;
+    width: 35%;
     height: 390px;
-    margin-right: auto;
+    margin-right: 3%;
 }
 
 .degree{
