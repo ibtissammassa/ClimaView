@@ -74,7 +74,7 @@ input[type="submit"] {
 
 .MainBox{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }
 
@@ -93,6 +93,7 @@ input[type="submit"] {
     background: #E9EDFB;
     width: 30%;
     height: 390px;
+    margin-right: auto;
 }
 
 .degree{
@@ -165,6 +166,9 @@ iframe{
     font-size: 30px;
 }
 
+img{
+    width: 40%;
+}
 
 
 
