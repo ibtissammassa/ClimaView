@@ -59,10 +59,11 @@ async function getWeather(city){
             let h = d.getHours();
             let m = d.getMinutes();
             day.innerHTML = weekDays[d.getDay()];
-            hour.innerHTML = h;
-            minutes.innerHTML = m;
             h= h<10 ? "0" + h : h;
             m= m<10 ? "0" + m : m;
+            hour.innerHTML = h;
+            minutes.innerHTML = m;
+            
 
          /* CITY NAME */
          const name= document.querySelector(".name");
