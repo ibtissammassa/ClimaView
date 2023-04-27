@@ -51,12 +51,17 @@ async function getWeather(city){
 
         /* DAY + HOUR */
             const day = document.querySelector(".day");
-            const time = document.querySelector(".hour");
             const hour = document.querySelector(".h");
             const minutes = document.querySelector(".m");
             const weekDays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-            const d = new Date();
+            const d = new Date((data.dt + data.timezone)*1000);// convert to milliseconds
+            let h = d.getHours();
+            let m = d.getMinutes();
             day.innerHTML = weekDays[d.getDay()];
+            hour.innerHTML = h;
+            minutes.innerHTML = m;
+            h= h<10 ? "0" + h : h;
+            m= m<10 ? "0" + m : m;
             
         /* DEGREE */
         const degree = document.querySelector(".degree");
